@@ -1,7 +1,7 @@
 <nav class="languageBar">
     <button class="languageButtons" *ngFor="let language of languages">{{language}}</button>
 </nav>
-<div id="cardDiv">  
+<div id="cardDiv">
     <app-card
     *ngFor="let data of mockdata"
     [siteurl]="data.owner.html_url"

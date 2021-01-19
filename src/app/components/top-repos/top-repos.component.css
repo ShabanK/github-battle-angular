@@ -1,7 +1,13 @@
+app-card{
+    margin:0
+}
+
+
 .languageBar{
     display: flex;
     justify-content: center;
 }
+
 button {
     border: none;
     background-color: white;
@@ -9,11 +15,15 @@ button {
     font-size: 20px;
     padding: 2% 3%;
     text-decoration: none;
-  }
-  button:focus {
+}
+
+button:focus {
     outline: none;
-  }
+}
+
 #cardDiv{
     display:flex;
     flex-wrap: wrap;
+    /* width:100% */
+    line-height: 0;
 }
