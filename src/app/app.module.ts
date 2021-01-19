@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { TopReposComponent } from './components/top-repos/top-repos.component';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TopReposComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule
