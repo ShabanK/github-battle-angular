@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 //Components
 import { AppComponent } from './app.component';
@@ -16,7 +17,8 @@ import { TopReposService } from "./services/top-repos.service"
     CardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [TopReposService],
   bootstrap: [AppComponent]
