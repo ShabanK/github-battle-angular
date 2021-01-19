@@ -21,9 +21,25 @@ button:focus {
     outline: none;
 }
 
-#cardDiv{
-    display:flex;
+div#cardsDiv{
+    display: flex;
     flex-wrap: wrap;
-    /* width:100% */
-    line-height: 0;
+    /* background-color: black; */
+}
+
+div.card{
+    margin: 0 2% 2% 2%;
+    width: 15%;
+    border: 2px solid purple;
+}
+app-card{
+    margin: 0 2% 2% 2%;
+    width: 15%;
+    border: 2px solid purple;
+}
+a{
+    text-decoration: none;
+}
+p{
+    text-align: center;
 }
