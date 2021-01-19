@@ -12,30 +12,31 @@ export class TopReposComponent implements OnInit {
   // `https://api.github.com/search/repositories?q=stars:>1+language:${language}&sort=stars&order=desc&type=Repositories`
   mockdata = MOCKDATA;
   completeData = []
-  currentTenRepos=[{}];
+  currentTenRepos=[];
   fetchedData;
   
   //
   constructor(public topReposService:TopReposService) { }
 
   ngOnInit() {
-    // this.topReposService.fetchData("All")
-    // .subscribe(repos=>this.currentTenRepos=repos)
-    this.completeData = this.languages.map(language=>{
+    this.languages.forEach(language=>{
         this.topReposService.fetchData(language).subscribe(fetchedData=>{
         this.fetchedData=fetchedData
         this.fetchedData.langId=language
-        return this.fetchedData
-    })
-    // this.topReposService.fetchData('All').subscribe(fetchedData=>{
-    //   this.fetchedData=fetchedData
-    //   this.fetchedData.langId="All"
-    //   this.completeData.push(this.fetchedData)
+        this.completeData.push(this.fetchedData)
+      })
     })
   }
+  
   consoleLogger(){
-    console.log(this.fetchedData)
     console.log(this.completeData)
+  }
+
+  handleChange(language:string){
+    console.log(language)
+    let currentDemandedRepos = this.completeData.find(item=>item.langId===language)
+    console.log(currentDemandedRepos)
+    this.currentTenRepos = currentDemandedRepos.items.slice(0,10)
   }
 
 }

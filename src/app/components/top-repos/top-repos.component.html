@@ -1,10 +1,10 @@
 <button (click)="consoleLogger()">degenerate</button>
 <nav class="languageBar">
-    <button class="languageButtons" *ngFor="let language of languages">{{language}}</button>
+    <button class="languageButtons" *ngFor="let language of languages" (click)="handleChange(language)">{{language}}</button>
 </nav>
 <div *ngIf="currentTenRepos.length" id="cardsDiv">
   <app-card
-    *ngFor="let data of mockdata"
+    *ngFor="let data of currentTenRepos"
     [siteurl]="data.owner.html_url"
     [image]="data.owner.avatar_url"
     [title]="data.name"
